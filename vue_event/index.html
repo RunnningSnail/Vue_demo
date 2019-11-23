@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Demo</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="vue.js"></script>
+
+</head>
+<body>
+	<!--vue-app是根容器-->
+	<div id="vue-app">
+		<h1>键盘Event</h1>
+		<p>你正在输入的名字是：{{name}}</p>
+		<label>姓名：</label>
+		<input type="text" v-on:keyup.enter="logName">
+		<label>年龄：</label>
+		<input type="text" v-on:keyup.alt.enter="logAge">
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
