@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Demo</title>
+	<link rel="stylesheet" href="style.css">
+	
+	<!-- <script src="https://unpkg.com/vue"></script> -->
+	<script type="text/javascript" src="vue-2.6.10/dist/vue.js"></script>
+	<!-- <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script> -->
+
+</head>
+<body>
+	<!--vue-app是根容器-->
+	<div id="vue-app">
+		<h1>{{ greet('Morning') }}</h1>
+		<p>Name:{{ name }}</p>
+		<p>age: {{ age }}</p>
+		<a href="{{ website }}">百度</a></br><!--这种写法不能渲染-->
+		<a v-bind:href="website">百度</a></br>
+		<input type="text" v-bind:value="name">
+		<p v-html="websiteTag">v-html</p>
+		<button v-on:click.once="addAge()">年龄加</button>
+		<button v-on:click.stop="minusAge">年龄减</button>
+		<a v-on:click.stop="minusAge">aaaa</a>
+		<button v-on:dblclick="minusAge">双击年龄减</button>
+		<button v-on:click="addAge(10)">年龄加十岁</button>
+		<br>
+		<div id="cavan" v-on:mousemove="showXY">
+			({{x}},{{y}})--<span v-on:mousemove="stop">stop Mooooooooving</span><br>
+			<span v-on:mousemove.stop="">stop Mooooooooving</span>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
